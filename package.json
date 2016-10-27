@@ -1,0 +1,17 @@
+{
+  "name": "angular-learn",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kiryl Drabysheuski",
+  "email": "kd5440055@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bower": "^1.7.9",
+    "jquery": "^3.1.1"
+  }
+}
