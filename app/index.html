@@ -4,20 +4,20 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
-        .blue {
-            color: blue;
-        }
-        .red {
-            color: red;
-        }
     </style>
-
+    <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" />
 </head>
 <body ng-app="root">
 
 <div ng-controller="index">
-    <input type="text" ng-model="angularModule" />
-    <h1 ng-class="angularModule">Sample Text</h1>
+    <table class="table">
+        <tbody>
+            <tr ng-repeat="product in products" ng-class="{blue: $odd}">
+                <td>{{product.id}}</td>
+                <td>{{product.name}}</td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
 <script src="../bower_components/jquery/dist/jquery.js"></script>
@@ -26,7 +26,12 @@
 <script type="text/javascript">
     angular.module("root", [])
             .controller("index", ["$scope", function ($scope) {
-
+                $scope.products = [
+                    {id: 1, name: "Hockey puck"},
+                    {id: 2, name: "Golf club"},
+                    {id: 3, name: "Baseball bat"},
+                    {id: 4, name: "Lacrosse stick"}
+                ]
             }]);
 </script>
 <!--<script src="js/angular.js" type="text/javascript"></script>-->
