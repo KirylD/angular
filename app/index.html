@@ -10,13 +10,20 @@
 <body ng-app="root">
 
 <div ng-controller="index">
-    <table class="table">
-        <tbody>
-            <tr ng-repeat="product in products" ng-class="{blue: $odd}">
-                <td>{{product.id}}</td>
-                <td>{{product.name}}</td>
-            </tr>
-        </tbody>
+    <form class="form-control" style="max-width: 300px">
+        <label>Value 1
+            <input type="checkbox" ng-model="checkBoxModel.value1">
+        </label>
+        <label>Value 2
+            <input type="checkbox" ng-model="checkBoxModel.value2">
+        </label>
+    </form>
+
+    <table class="table" style="max-width: 300px">
+        <tr>
+            <td ng-show="checkBoxModel.value1">{{checkBoxModel.value1}}</td>
+            <td ng-show="checkBoxModel.value2">{{checkBoxModel.value2}}</td>
+        </tr>
     </table>
 </div>
 
@@ -26,12 +33,10 @@
 <script type="text/javascript">
     angular.module("root", [])
             .controller("index", ["$scope", function ($scope) {
-                $scope.products = [
-                    {id: 1, name: "Hockey puck"},
-                    {id: 2, name: "Golf club"},
-                    {id: 3, name: "Baseball bat"},
-                    {id: 4, name: "Lacrosse stick"}
-                ]
+                $scope.checkBoxModel = {
+                    value1: true,
+                    value2: true
+                };
             }]);
 </script>
 <!--<script src="js/angular.js" type="text/javascript"></script>-->
