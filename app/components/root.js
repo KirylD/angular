@@ -1,6 +1,6 @@
 (function() {
-    angular.module("root", ["service"])
-        .controller("index", ["$scope", "message", function ($scope, message) {
-            $scope.messageFromService = message;
+    angular.module("root", ["services"])
+        .controller("index", ["$scope", "square", function ($scope, square) {
+            $scope.product = square;
         }])
 }());
