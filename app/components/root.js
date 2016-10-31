@@ -1,6 +1,6 @@
 (function() {
     angular.module("root", ["services"])
-        .controller("index", ["$scope", "square", function ($scope, square) {
-            $scope.product = square;
+        .controller("index", ["$scope", "multiplier", function ($scope, multiplier) {
+            $scope.product = multiplier.multiply(2);
         }])
 }());
