@@ -10,35 +10,14 @@
 <body ng-app="root">
 
 <div ng-controller="index">
-    <form class="form-control" style="max-width: 300px">
-        <label>Value 1
-            <input type="checkbox" ng-model="checkBoxModel.value1">
-        </label>
-        <label>Value 2
-            <input type="checkbox" ng-model="checkBoxModel.value2">
-        </label>
-    </form>
-
-    <table class="table" style="max-width: 300px">
-        <tr>
-            <td ng-show="checkBoxModel.value1">{{checkBoxModel.value1}}</td>
-            <td ng-show="checkBoxModel.value2">{{checkBoxModel.value2}}</td>
-        </tr>
-    </table>
+    {{messageFromService}}
 </div>
 
 <script src="../bower_components/jquery/dist/jquery.js"></script>
 <script src="../bower_components/angular/angular.js"></script>
 
-<script type="text/javascript">
-    angular.module("root", [])
-            .controller("index", ["$scope", function ($scope) {
-                $scope.checkBoxModel = {
-                    value1: true,
-                    value2: true
-                };
-            }]);
-</script>
-<!--<script src="js/angular.js" type="text/javascript"></script>-->
+<script src="components/root.js" type="text/javascript"></script>
+<script src="components/service.js" type="text/javascript"></script>
+
 </body>
 </html>
