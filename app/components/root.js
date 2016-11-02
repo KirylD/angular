@@ -1,6 +1,9 @@
 (function() {
     angular.module("root", ["services"])
-        .controller("index", ["$scope", "multiplier", function ($scope, multiplier) {
-            $scope.product = multiplier.multiply(2);
+        .config(["messageProvider", function (messageProvider) {
+            messageProvider.setText("Hello world!");
+        }])
+        .controller("index", ["$scope", "message", function ($scope, message) {
+            $scope.message = message.text;
         }])
 }());
