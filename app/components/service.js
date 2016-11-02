@@ -1,6 +1,5 @@
 (function () {
     angular.module("services", [])
-        .value("factor", "6")
         .provider("message", [function () {
             var text = null;
             

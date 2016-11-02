@@ -1,7 +1,8 @@
 (function() {
     angular.module("root", ["services"])
-        .config(["messageProvider", function (messageProvider) {
-            messageProvider.setText("Hello world!");
+        .constant("constantText", "Hello constant!")
+        .config(["messageProvider", "constantText", function (messageProvider, constantText) {
+            messageProvider.setText(constantText);
         }])
         .controller("index", ["$scope", "message", function ($scope, message) {
             $scope.message = message.text;
